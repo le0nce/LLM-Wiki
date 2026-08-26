@@ -1,0 +1,6 @@
+# Ignore source documents that shouldn't be committed
+# sources/*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
