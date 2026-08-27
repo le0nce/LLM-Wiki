@@ -42,6 +42,18 @@ Rules:
 - Never create links to pages that don't exist
 - YAML frontmatter is mandatory on every page
 
+## Activity Tracking (automatic, no confirmation)
+
+Separately from the operations below, maintain `wiki/_index/activity.md` as a running record of the current work session:
+
+- **Current Goal**: the overall objective of what's being worked on. Update it when the goal is set or changes.
+- **Current Task**: what's actively in progress right now. Update it as work moves between tasks.
+- **Decision Log**: a dated, one-line entry (`- [YYYY-MM-DD] Decision — rationale`) whenever a real decision is made in conversation — a choice between alternatives, a scope call, a design or approach decision. Not every message; only things worth remembering later.
+
+This file is updated automatically, without pausing to ask — it does **not** fall under the "never do an unscoped update" / confirm-scope-first rule that governs `ingest` and other content operations below. Those rules still apply to actual wiki content (entity/concept/source pages); `activity.md` is session bookkeeping, not compiled knowledge.
+
+Keep entries terse. Bump `last_updated` in the frontmatter whenever the file changes.
+
 ## Operations
 
 ### Ingest (`/wiki ingest`)
@@ -104,7 +116,8 @@ sources/                    # Raw input (human-owned, agent reads only)
 wiki/
 ├── _index/
 │   ├── index.md            # Content catalog: every page with one-line summary
-│   └── log.md              # Chronological operation log
+│   ├── log.md              # Chronological operation log
+│   └── activity.md         # Current goal/task + decision log (auto-updated, no confirmation)
 ├── overview.md             # High-level wiki overview
 ├── conventions.md          # Naming conventions and style guide
 ├── sources/                # Source summary pages
