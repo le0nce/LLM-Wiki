@@ -44,15 +44,18 @@ Rules:
 
 ## Activity Tracking (automatic, no confirmation)
 
-Separately from the operations below, maintain `wiki/_index/activity.md` as a running record of the current work session:
+Separately from the operations below, maintain `wiki/_index/activity.md` as a **durable, project-level** log — not a per-session diary. It should stay short and cheap to read across the file's whole lifetime.
 
-- **Current Goal**: the overall objective of what's being worked on. Update it when the goal is set or changes.
-- **Current Task**: what's actively in progress right now. Update it as work moves between tasks.
-- **Decision Log**: a dated, one-line entry (`- [YYYY-MM-DD] Decision — rationale`) whenever a real decision is made in conversation — a choice between alternatives, a scope call, a design or approach decision. Not every message; only things worth remembering later.
+- **Project Goal**: the overarching purpose of this wiki/project, in 1-2 sentences. Edit it only when the goal itself actually shifts — this should rarely change.
+- **Decision Log**: a dated, one-line entry (`- [YYYY-MM-DD] Decision — rationale`) for decisions that affect the project going forward — scope calls, structural or convention changes, direction changes. Skip anything that's just implementation detail of the current task; that's already covered by commits and `wiki/_index/log.md`.
 
-This file is updated automatically, without pausing to ask — it does **not** fall under the "never do an unscoped update" / confirm-scope-first rule that governs `ingest` and other content operations below. Those rules still apply to actual wiki content (entity/concept/source pages); `activity.md` is session bookkeeping, not compiled knowledge.
+This does **not** fall under the "never do an unscoped update" / confirm-scope-first rule that governs `ingest` and other content operations below — those still apply to actual wiki content (entity/concept/source pages).
 
-Keep entries terse. Bump `last_updated` in the frontmatter whenever the file changes.
+To keep this cheap:
+- Most turns produce **no edit** — only write when something is genuinely goal- or decision-worthy at the project level, not on every task or exchange.
+- Append with a small targeted edit to the end of the Decision Log; don't re-read or rewrite the whole file to do it.
+- One line per entry, no elaboration.
+- If the Decision Log passes ~20 entries, condense the oldest ones into a single summary line so the live file stays short.
 
 ## Operations
 
@@ -117,7 +120,7 @@ wiki/
 ├── _index/
 │   ├── index.md            # Content catalog: every page with one-line summary
 │   ├── log.md              # Chronological operation log
-│   └── activity.md         # Current goal/task + decision log (auto-updated, no confirmation)
+│   └── activity.md         # Project goal + durable decision log (auto-updated, no confirmation)
 ├── overview.md             # High-level wiki overview
 ├── conventions.md          # Naming conventions and style guide
 ├── sources/                # Source summary pages

@@ -1,20 +1,18 @@
 ---
-title: "Activity Log"
+title: "Project Log"
 type: activity
 last_updated: 2026-08-27
 ---
 
-# Activity Log
+# Project Log
 
-Running record of current work: the overall goal, what's actively being worked on, and decisions made along the way. Unlike wiki content edits, this file is updated automatically — no confirmation needed.
+Durable, project-level record — not a per-session log. Survives across sessions and stays small. Updated automatically, no confirmation needed, but only when something is actually goal- or decision-worthy (see `CLAUDE.md`).
 
-## Current Goal
-<!-- The overall objective of the current work session, in 1-2 sentences -->
-
-## Current Task
-<!-- What's actively being worked on right now -->
+## Project Goal
+<!-- The overarching purpose of this wiki. Changes rarely. -->
 
 ## Decision Log
-<!-- Chronological, most recent last. Format: `- [YYYY-MM-DD] Decision — rationale` -->
+<!-- Chronological, most recent last, one line each: `- [YYYY-MM-DD] Decision — rationale` -->
+<!-- Project-level only: scope, structure, conventions, direction. Not task-level implementation detail. -->
 
-- [2026-08-27] Added automatic activity tracking to the wiki — goal, current task, and chat decisions are now logged here without requiring confirmation, separate from the confirm-first ingest/edit operations.
+- [2026-08-27] Added a project-level activity log (`wiki/_index/activity.md`) to track the overall goal and durable decisions, separate from the confirm-first ingest/edit operations and from per-session task detail.
